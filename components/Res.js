@@ -7,7 +7,7 @@ export default class Res extends React.Component{
     
 static navigationOptions({navigation}){
     return {
-    title: 'Météo à ' + navigation.state.params.town,
+    title: 'Météo à ' + navigation.state.params.text,
     headerStyle: {
         backgroundColor: "#393E46"
       },
@@ -26,7 +26,7 @@ static navigationOptions({navigation}){
 constructor (props) {
     super(props)
     this.state = {
-        town: this.props.navigation.state.params.town,
+        town: this.props.navigation.state.params.text,
         apiRes: null
     }
     setTimeout(() => {

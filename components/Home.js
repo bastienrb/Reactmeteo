@@ -30,16 +30,12 @@ class Home extends Component {
 
 	constructor(props) {
     super(props);
-    this.state = { town: 'Paris' };
+    this.state = { text: 'Paris' };
   }
 
-
-  setTown (town) {
-    this.setState({town})
-  }
 
   submit () {
-    this.props.navigation.navigate('Res', {town: this.state.town})
+    this.props.navigation.navigate('Res', {text: this.state.text})
   }
 
   render() {
@@ -50,9 +46,9 @@ class Home extends Component {
       	<TextInput
           underlineColorAndroid='transparent'
 	        style={styles.input}
-          onChangeText={(town) => this.setTown({town})}
+          onChangeText={(text) => this.setState({text})}
           onSubmitEditing={() => this.submit()}
-	        value={this.state.town}
+	        value={this.state.text}
       	/>
 
         <Button color="#222831" onPress={() => this.submit()} title="Trouver la météo"/>
@@ -83,4 +79,3 @@ export default StackNavigator({
   Home: { screen: Home },
   Res: { screen: Res }
 })
-
